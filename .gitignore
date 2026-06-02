@@ -1,0 +1,16 @@
+# OS / editor noise
+.DS_Store
+*.swp
+.vscode/
+
+# Node (for Module 4 / future local service)
+node_modules/
+npm-debug.log*
+dist/
+.env
+
+# Python (for Module 4 code)
+__pycache__/
+*.pyc
+.venv/
+venv/
