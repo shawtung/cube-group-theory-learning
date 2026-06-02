@@ -94,6 +94,21 @@ Caveats:
 - Bijection is element ↔ state, NOT sequence ↔ state. Different sequences (`RRRR` and `e`) can be the same element; collapse happens at sequence→element. Substitution lives at the element level, so it's rigorous.
 - The correspondence depends on choosing solved as the reference; a different base just shifts everything (still a bijection). This is WHY we always fix the solved state as the reference frame, letting us talk about "operations" and "states" interchangeably (basis for Module 2 modeling).
 
+### Deep dive: why subtraction/division are NOT associative ("disguised inverse")
+Learner asked why subtraction fails associativity. Examples: $(10-5)-2=3$ but $10-(5-2)=7$; $(a/b)/c = a\cdot\frac1b\cdot\frac1c$ but $a/(b/c)=a\cdot\frac1b\cdot c$.
+
+Mechanism (identical for both):
+| | left-assoc $(a\circ b)\circ c$ | right-assoc $a\circ(b\circ c)$ | flipped |
+|---|---|---|---|
+| subtraction | $a+(-b)+(-c)$ | $a+(-b)+(+c)$ | sign of $c$ |
+| division | $a\cdot\frac1b\cdot\frac1c$ | $a\cdot\frac1b\cdot c$ | reciprocal of $c$ |
+
+The right-hand bracket forces "take inverse" to act on a *composite* expression, and **inverse flips composites**: $-(b+c) = -c-b$, or $(b/c)^{-1}$ un-inverts $c$. So $c$ gets inverted one extra time.
+
+**Key insight (learner)**: subtraction and division are NOT group operations — they are disguises for "group op (+ or ×) followed by taking an inverse". Their non-associativity is a manifestation of the inverse-reversal law $(xy)^{-1}=y^{-1}x^{-1}$ (proved in Lesson 1). Whenever an "operation" fails associativity, look for a hidden inverse step.
+
+Cube connection: $(R\cdot U)^{-1} = U^{-1}R^{-1} = U'R'$ — undoing a sequence reverses order and inverts each move, exactly like $-(b+c)=-c-b$. Speed cubers already use this when undoing an alg.
+
 - **Q1**: $(\{1,-1\}, \times)$ — Abelian group. Identity 1, each element its own inverse (both involutions). $\cong C_2$.
 - **Q2**: $(\{0,1,2,3\}, +_4)$ — group, identity 0, inverses $0,3,2,1$. $\cong C_4$ (same as square rotations).
 - **Q3**: 2x2 turning only R face $\{e,R,R^2,R^3\}$ — $\cong C_4$.
