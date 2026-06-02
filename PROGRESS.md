@@ -1,8 +1,8 @@
 # Teaching Log & Progress Tracker
 
 ## Current Status
-- **Current Lesson**: Lesson 1 complete; next up Lesson 2 (Permutations)
-- **Last Session**: 2026-06-02
+- **Current Lesson**: Lesson 1 complete (deepened); next up Lesson 2 (Permutations)
+- **Last Session**: 2026-06-02 (evening pause)
 
 ## Progress
 
@@ -39,3 +39,14 @@
   - Identity is always its own inverse; introduced involutions
 - All 3 exercises solved correctly; learner recognized C4 structure across disguises
 - Next: Lesson 2 (Permutations)
+
+### Session 3 - 2026-06-02 (evening pause)
+- Built **state-externalization system** so any fresh session (after compaction or on another machine) can fully resume: added AGENTS.md (AI bootstrap), README.md, lessons/lesson-01.md archive, .gitignore. Initialized git, pushed to GitHub: git@github.com:shawtung/cube-group-theory-learning.git
+- Exercises now archived separately in exercises/ (learner wants to view problems in a standalone tab); going forward, ALWAYS save generated exercises there.
+- Lesson 1 deepened via excellent learner questions:
+  - **Identity uniqueness** proved (bridge $e\cdot e'$). **Inverse uniqueness** proved by learner ($b = e b = (ca)b = c(ab) = ce = c$), which also shows left inverse = right inverse. Established "algebraic bridging" meta-skill.
+  - **associativity vs commutativity** fully resolved: two different "orderings" (operand arrangement A = commutativity; evaluation/time order B = free, guaranteed equal by associativity). "See-through test": copy left-to-right, did sequence change? Multiplication hides the difference (both hold); cube is the clean non-Abelian example. Binary-tree analogy (learner's own).
+  - **substitution needs "determinate", not "short name"**: `R·U` is a determinate element, substitutable as $X=R\cdot U$, even without a nice name.
+  - **Learner insight**: group elements ↔ cube states are in bijection (simply transitive action), fixing solved as reference. Boundary noted: bijection is element↔state, not sequence↔state.
+  - All deep dives archived in lessons/lesson-01.md.
+- Status: Lesson 1 fully solid. Paused; will resume Lesson 2 (Permutations) in the evening.

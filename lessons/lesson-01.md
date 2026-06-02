@@ -48,7 +48,51 @@ Analogy: socks-then-shoes. You can re-bracket which steps you "package" together
 ### Q: Is the identity always its own inverse?
 **Yes**, $e^{-1}=e$, since $e\cdot e = e$. The converse is false: elements with $a^{-1}=a$ are **involutions** (e.g. $r_2$ = 180° rotation, $R^2$ on the cube); the identity is just one special case.
 
-## Exercises (all solved correctly by learner)
+### Q: Is the identity unique? Can there be multiple identities?
+**Unique.** Proof: suppose $e$ and $e'$ are both identities. Then $e\cdot e' = e'$ (since $e$ is an identity) and $e\cdot e' = e$ (since $e'$ is an identity), so $e = e\cdot e' = e'$. The trick is to let the two identities act on each other via the bridge $e\cdot e'$ and simplify from both sides. No commutativity used → holds for non-Abelian groups too.
+
+### Theorem: Inverses are unique (learner proved this)
+Suppose $c\cdot a = e$ (left inverse) and $a\cdot b = e$ (right inverse). Then:
+$$b = e\cdot b = (c\cdot a)\cdot b = c\cdot(a\cdot b) = c\cdot e = c.$$
+So $b = c$. This also proves **left inverse = right inverse** in a group (not guaranteed in weaker structures like monoids). Key technique: build a middle expression ($c\cdot a\cdot b$) and simplify from both directions, using **associativity** as the bridge. No commutativity used.
+
+> Meta-skill established: "algebraic bridging" — insert $a^{-1}a = e$ or regroup via associativity. This is the core technique for deriving cube algorithms later.
+
+### Deep dive: associativity vs commutativity — the "two orderings" confusion
+The word "order" is overloaded. Two DIFFERENT orderings:
+- **Ordering A — arrangement of operands** (who is to the left of whom): $a\cdot b$ vs $b\cdot a$. This is what **commutativity** governs.
+- **Ordering B — evaluation/time order** (which step you compute first): $(a\cdot b)\cdot c$ vs $a\cdot(b\cdot c)$. This is NOT governed by any axiom; you are FREE to pick, and **associativity is the guarantee that any choice gives the same result**.
+
+Learner's confusion: in $(37\times4)\times25 = 37\times(4\times25)$, the evaluation order changed (first compute $4\times25$), so is that commutativity? **No.** The left-to-right sequence `37,4,25` never moved; only the bracketing (tree shape) changed → pure associativity.
+
+**The "see-through" test**: copy symbols left to right — did the sequence change?
+- regroup parentheses: sequence unchanged → associativity
+- swap operands: sequence changed → commutativity
+
+**Why multiplication of numbers hides the difference**: numbers are BOTH associative and commutative, so both effects blur together. The cube (non-Abelian) is the clean example: you can physically feel associativity hold ($(R\cdot U)\cdot F = R\cdot(U\cdot F)$, same pattern) while commutativity fails ($RU \neq UR$, different patterns).
+
+**Binary-tree image**: different parenthesizations = different-shaped expression/parse trees with the SAME left-to-right leaves. Associativity = "different tree shapes evaluate equal." (Learner's own analogy — a good one.)
+
+### Deep dive: substitution needs "determinate", not "short name"
+Learner worried `R·U` can't be substituted because, unlike $37\times4=148$, it doesn't collapse to a simple symbol.
+- **`R·U` IS a determinate group element** (a definite state-transformation), just like 148. The only difference: 148 has a short decimal *name*; `R·U` has no short name, we just call it "RU".
+- **Substitution works on group elements because the result is the same determinate object — NOT because it has a short or "meaningful" name.** You may set $X = R\cdot U$ and write $(R\cdot U)\cdot F = X\cdot F$.
+
+| | result determinate? | short name? | substitutable? |
+|---|---|---|---|
+| $37\times4$ | yes | yes ("148") | yes |
+| `R·U` | yes | no (only "RU") | yes |
+
+Every move sequence collapses to a determinate group element regardless of whether it has a nice name or geometric meaning. This is the mental prep for commutators/conjugation: we manipulate `R U R' U'` as one element even though it "looks" messy.
+
+### Key insight (learner): group elements ↔ cube states are in bijection
+Fixing the solved state $S_0$ as reference, the map $g \mapsto g\cdot S_0$ is a **bijection** between group elements and reachable states.
+- Surjective: a reachable state is by definition reached by some $g$.
+- Injective: if $g\cdot S_0 = h\cdot S_0$, left-multiply by $g^{-1}$ → $g^{-1}h$ fixes $S_0$; for the cube only $e$ fixes the solved state, so $g=h$. (This property = the action is **simply transitive**.)
+
+Caveats:
+- Bijection is element ↔ state, NOT sequence ↔ state. Different sequences (`RRRR` and `e`) can be the same element; collapse happens at sequence→element. Substitution lives at the element level, so it's rigorous.
+- The correspondence depends on choosing solved as the reference; a different base just shifts everything (still a bijection). This is WHY we always fix the solved state as the reference frame, letting us talk about "operations" and "states" interchangeably (basis for Module 2 modeling).
 
 - **Q1**: $(\{1,-1\}, \times)$ — Abelian group. Identity 1, each element its own inverse (both involutions). $\cong C_2$.
 - **Q2**: $(\{0,1,2,3\}, +_4)$ — group, identity 0, inverses $0,3,2,1$. $\cong C_4$ (same as square rotations).
