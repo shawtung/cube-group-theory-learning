@@ -1,15 +1,15 @@
 # Teaching Log & Progress Tracker
 
 ## Current Status
-- **Current Lesson**: Lesson 2 (Permutations) **COMPLETE**; next up Lesson 3 (Order, Subgroups, Generators)
-- **Last Session**: 2026-06-04 (afternoon)
+- **Current Lesson**: Lesson 2 (Permutations) **COMPLETE** (incl. all formal exercises); next up Lesson 3 (Order, Subgroups, Generators)
+- **Last Session**: 2026-06-04 (evening)
 
 ## Progress
 
 | Lesson | Title | Status | Date Started | Date Completed | Notes |
 |--------|-------|--------|--------------|----------------|-------|
 | 1 | What is a Group? | completed | 2026-05-15 | 2026-06-02 | Solid grasp. Asked sharp questions re: binary operation requirement, associativity vs commutativity (grouping vs ordering). All 3 exercises correct; recognized C4 across multiple disguises. |
-| 2 | Permutations | completed | 2026-06-04 | 2026-06-04 | Bijection def, $|S_n|=n!$, two-line & cycle notation, disjoint cycles, composition (right-to-left), inverse, cube link ($U=(1234)$). Deep dives: position-vs-label / active-passive; cubing convention clash. All in-chat exercises correct. |
+| 2 | Permutations | completed | 2026-06-04 | 2026-06-04 | Bijection def, $|S_n|=n!$, two-line & cycle notation, disjoint cycles, composition (right-to-left), inverse, cube link ($U=(1234)$). Deep dives: position-vs-label / active-passive; cubing convention clash. All in-chat AND all 5 formal exercises + stretch correct. |
 | 3 | Order, Subgroups, Generators | not-started | | | |
 | 4 | Parity and Alternating Group | not-started | | | |
 | 5 | Homomorphisms and Isomorphisms | not-started | | | |
@@ -64,5 +64,15 @@
 - **Completed Lesson 2 (Permutations).** Taught composition (right-to-left convention, $\tau\sigma$ = first $\sigma$ then $\tau$; non-Abelian), the cubing-notation convention clash (locked mathematician's right-to-left), inverse (reverse arrows/cycles, $(\tau\sigma)^{-1}=\sigma^{-1}\tau^{-1}$, cycles can start anywhere), and the cube link ($U=(1234)$, position layer = $S_8$, orientation deferred to L7; $U^2=(13)(24)$, $|U|=4$, $\cong C_4$).
 - All in-chat exercises correct: $\beta\alpha=(2\,3)$, $\gamma^{-1}=(1\,2\,4\,3)$, $U^2=(13)(24)$ diagonal swap. Learner adopted an efficient whole-row tracking notation.
 - Formal exercises archived to exercises/lesson-02-exercises.md (5 Qs + stretch on cycle-length lcm, previewing order).
-- **Infra note:** the agents-lesson-2-start worktree was deleted mid-session (learner merged branch agents/lesson-2-start into master and removed the worktree). Going forward work directly in the MAIN project: /Users/shawn/Study/Group-Cube (branch master). Tooling briefly failed because the session cwd pointed at the deleted worktree; resolved after VS Code restart + switching from the standalone agents window back to the chat plugin.
+- **Infra note (carryover):** the agents-lesson-2-start worktree was deleted mid-session (learner merged branch agents/lesson-2-start into master and removed the worktree). Going forward work directly in the MAIN project: /Users/shawn/Study/Group-Cube (branch master). Tooling briefly failed because the session cwd pointed at the deleted worktree; resolved after VS Code restart + switching from the standalone agents window back to the chat plugin.
 - Next: Lesson 3 (Order, Subgroups, Generators).
+
+### Session 6 - 2026-06-04 (evening)
+- Worked through **all 5 formal Lesson 2 exercises + stretch**, one at a time. Learner answered every part correctly with clean reasoning.
+  - Q1: $\pi=(1\,4\,5)(2\,6)$, fixed pt 3. ✓
+  - Q2: $ba=(1\,3)(2\,4)$, $ab=(1\,2)(3\,4)$, $\neq$ ⇒ $S_4$ non-Abelian. ✓
+  - Q3: $\sigma^{-1}=(3\,5\,2\,4\,1)$; verified $1\to1$. (Noted cycles can start anywhere.) ✓
+  - Q4: $(ba)^{-1}=(1\,3)(2\,4)$ both ways. **Learner insight:** reversal $a^{-1}b^{-1}$ is masked here because $ba$ is an involution (=its own inverse).
+  - Q5: (a) recognized $M$ moves all 8 corners ⇒ whole-cube rotation ($x$), not a single face turn (which moves only 4). (b) $M^2=(1\,8)(2\,7)(3\,6)(4\,5)$. (c) $|M|=\text{lcm}(4,4)=4$.
+  - Stretch: $|(1\,2\,3)(4\,5)|=\text{lcm}(3,2)=6$. Learner already internalized order = lcm of disjoint cycle lengths (previews L3).
+- Lesson 2 fully closed. Next: begin Lesson 3 (Order, Subgroups, Generators).
