@@ -1,15 +1,15 @@
 # Teaching Log & Progress Tracker
 
 ## Current Status
-- **Current Lesson**: Lesson 1 complete (deepened); next up Lesson 2 (Permutations)
-- **Last Session**: 2026-06-02 (evening pause)
+- **Current Lesson**: Lesson 2 (Permutations) in progress — covered definition, two notations, cycle decomposition, active/passive distinction. **Next: Step 3 = composition (left-to-right vs right-to-left).**
+- **Last Session**: 2026-06-04 (lunch pause)
 
 ## Progress
 
 | Lesson | Title | Status | Date Started | Date Completed | Notes |
 |--------|-------|--------|--------------|----------------|-------|
 | 1 | What is a Group? | completed | 2026-05-15 | 2026-06-02 | Solid grasp. Asked sharp questions re: binary operation requirement, associativity vs commutativity (grouping vs ordering). All 3 exercises correct; recognized C4 across multiple disguises. |
-| 2 | Permutations | not-started | | | |
+| 2 | Permutations | in-progress | 2026-06-04 | | Covered: bijection def, $|S_n|=n!$, two-line & cycle notation, disjoint cycles. Deep dive on position-vs-label & active/passive (learner rediscovered active/passive independently). Next: composition. |
 | 3 | Order, Subgroups, Generators | not-started | | | |
 | 4 | Parity and Alternating Group | not-started | | | |
 | 5 | Homomorphisms and Isomorphisms | not-started | | | |
@@ -50,3 +50,12 @@
   - **Learner insight**: group elements ↔ cube states are in bijection (simply transitive action), fixing solved as reference. Boundary noted: bijection is element↔state, not sequence↔state.
   - All deep dives archived in lessons/lesson-01.md.
 - Status: Lesson 1 fully solid. Paused; will resume Lesson 2 (Permutations) in the evening.
+
+### Session 4 - 2026-06-04 (morning, lunch pause)
+- Started **Lesson 2 (Permutations)**. Covered through the active/passive distinction; composition is next.
+- Taught: permutation = bijection on $\{1..n\}$; why bijection (cube: each slot exactly one piece); $|S_n|=n!$ (learner linked to $P(4,4)=4!=24$ instantly); two-line & cycle notation; disjoint-cycle decomposition.
+- Exercises solved correctly in-chat: two-line→cycle ($(1\,3)(2\,5)$, fixed pt 4); "what's in slot 1 after $(1\,2\,4)$" = blue (learner noted filling a slot reverses the arrow → uses $\sigma^{-1}$).
+- **Big conceptual thread (learner-driven):** position-vs-label question led to separating TWO independent switches — ① slot vs label (relabel, no physics change) and ② destination vs source (differs by inverse, changes answer). Learner independently rediscovered **active vs passive transformations**. Correction issued: passive ≠ "moves only some pieces"; active/passive describe the SAME $\sigma$ with identical physical results, differing only in language. Cube turn = active (real motion). All archived in lessons/lesson-02.md.
+- Clarified term **scramble** (打乱 / scramble sequence).
+- Course convention locked: **numbers = positions; $\sigma(i)=j$ = destination.**
+- Next: Lesson 2 Step 3 — composition, left-to-right vs right-to-left convention.
