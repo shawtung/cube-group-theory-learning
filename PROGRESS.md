@@ -1,15 +1,15 @@
 # Teaching Log & Progress Tracker
 
 ## Current Status
-- **Current Lesson**: Lesson 2 (Permutations) in progress — covered definition, two notations, cycle decomposition, active/passive distinction. **Next: Step 3 = composition (left-to-right vs right-to-left).**
-- **Last Session**: 2026-06-04 (lunch pause)
+- **Current Lesson**: Lesson 2 (Permutations) **COMPLETE**; next up Lesson 3 (Order, Subgroups, Generators)
+- **Last Session**: 2026-06-04 (afternoon)
 
 ## Progress
 
 | Lesson | Title | Status | Date Started | Date Completed | Notes |
 |--------|-------|--------|--------------|----------------|-------|
 | 1 | What is a Group? | completed | 2026-05-15 | 2026-06-02 | Solid grasp. Asked sharp questions re: binary operation requirement, associativity vs commutativity (grouping vs ordering). All 3 exercises correct; recognized C4 across multiple disguises. |
-| 2 | Permutations | in-progress | 2026-06-04 | | Covered: bijection def, $|S_n|=n!$, two-line & cycle notation, disjoint cycles. Deep dive on position-vs-label & active/passive (learner rediscovered active/passive independently). Next: composition. |
+| 2 | Permutations | completed | 2026-06-04 | 2026-06-04 | Bijection def, $|S_n|=n!$, two-line & cycle notation, disjoint cycles, composition (right-to-left), inverse, cube link ($U=(1234)$). Deep dives: position-vs-label / active-passive; cubing convention clash. All in-chat exercises correct. |
 | 3 | Order, Subgroups, Generators | not-started | | | |
 | 4 | Parity and Alternating Group | not-started | | | |
 | 5 | Homomorphisms and Isomorphisms | not-started | | | |
@@ -59,3 +59,10 @@
 - Clarified term **scramble** (打乱 / scramble sequence).
 - Course convention locked: **numbers = positions; $\sigma(i)=j$ = destination.**
 - Next: Lesson 2 Step 3 — composition, left-to-right vs right-to-left convention.
+
+### Session 5 - 2026-06-04 (afternoon)
+- **Completed Lesson 2 (Permutations).** Taught composition (right-to-left convention, $\tau\sigma$ = first $\sigma$ then $\tau$; non-Abelian), the cubing-notation convention clash (locked mathematician's right-to-left), inverse (reverse arrows/cycles, $(\tau\sigma)^{-1}=\sigma^{-1}\tau^{-1}$, cycles can start anywhere), and the cube link ($U=(1234)$, position layer = $S_8$, orientation deferred to L7; $U^2=(13)(24)$, $|U|=4$, $\cong C_4$).
+- All in-chat exercises correct: $\beta\alpha=(2\,3)$, $\gamma^{-1}=(1\,2\,4\,3)$, $U^2=(13)(24)$ diagonal swap. Learner adopted an efficient whole-row tracking notation.
+- Formal exercises archived to exercises/lesson-02-exercises.md (5 Qs + stretch on cycle-length lcm, previewing order).
+- **Infra note:** the agents-lesson-2-start worktree was deleted mid-session (learner merged branch agents/lesson-2-start into master and removed the worktree). Going forward work directly in the MAIN project: /Users/shawn/Study/Group-Cube (branch master). Tooling briefly failed because the session cwd pointed at the deleted worktree; resolved after VS Code restart + switching from the standalone agents window back to the chat plugin.
+- Next: Lesson 3 (Order, Subgroups, Generators).

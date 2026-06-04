@@ -1,6 +1,6 @@
 # Lesson 2: Permutations (置换)
 
-> Archived content of Lesson 2. In progress — covers up through the active/passive distinction; Step 3 (composition) still to come.
+> Archived full content of Lesson 2 (COMPLETE 2026-06-04). Definition → notations → composition → inverse → connection to the cube.
 
 ## Motivation (from cubing intuition)
 
@@ -68,5 +68,54 @@ To find what ends up in slot 1 under $(1\ 2\ 4)$ acting on {slot1=red, slot2=gre
 ## Terminology
 - **scramble** = 打乱: either the act of mixing a solved cube, or the resulting mixed state / the sequence that produces it (competition "scramble sequence" e.g. `R U2 F' R2 ...`). A scramble state = an element of the cube group $G$; solving it = taking the inverse.
 
-## Next step (to resume)
-**Step 3: Composition of permutations** — left-to-right vs right-to-left convention; "do A then B" written as $BA$ vs $AB$. This is the function-composition direction question under the active view.
+## Composition (复合)
+
+Permutations are functions, so they compose. **Convention (locked, mathematician's): right-to-left**, matching $f\circ g$:
+$$(\tau\sigma)(i) = \tau(\sigma(i))$$
+So "**do $A$ then $B$**" is written $\boxed{BA}$ — the later move on the left.
+
+Worked example: $\sigma=(1\,2),\tau=(2\,3)$ on $\{1,2,3\}$.
+- $\tau\sigma$ (first $\sigma$ then $\tau$): trace $(\tau\sigma)(i)=\tau(\sigma(i))$ -> $1\to3,2\to1,3\to2$ = $(1\ 3\ 2)$.
+- $\sigma\tau$ (first $\tau$ then $\sigma$) -> $(1\ 2\ 3)$.
+- $\tau\sigma \neq \sigma\tau$ => $S_n$ ($n\ge3$) is **non-Abelian** — the $RU\neq UR$ from Lesson 1, now in $S_n$.
+
+### Convention clash with cubing notation
+- **Mathematician (this course):** $AB$ means do $B$ first (right-to-left).
+- **Many cubing texts:** read `R U R'` left-to-right (R first).
+These are opposite. Neither is wrong; we lock the mathematician's convention (consistent with function composition, $(AB)^{-1}=B^{-1}A^{-1}$, conjugation, commutators). In Module 2, move order will be annotated explicitly on every algorithm.
+
+Learner exercise (correct): $\alpha=(1\,2\,3),\beta=(1\,2)$ -> $\beta\alpha=(2\ 3)$. Learner used an efficient "whole-row tracking" notation: `[1,2,3]->[2,3,1]->[1,3,2]`.
+
+## Inverse (逆置换)
+
+$\sigma^{-1}$ undoes $\sigma$: $\sigma^{-1}\sigma=\sigma\sigma^{-1}=e$.
+
+**Method 1 (two-line):** swap the two rows, then re-sort by the top row.
+**Method 2 (cycle):** reverse each cycle. $(1\ 2\ 4)^{-1}=(1\ 4\ 2)$. Intuition: reverse the arrows ("filling a slot uses $\sigma^{-1}$" from earlier).
+
+**Order-reversal property** (foreshadowed in Lesson 1): $(\tau\sigma)^{-1}=\sigma^{-1}\tau^{-1}$ (socks-and-shoes). A hallmark of non-commutativity.
+
+Learner exercise (correct): $\gamma=(1\,3\,4\,2)$ -> $\gamma^{-1}=(2\ 4\ 3\ 1)=(1\ 2\ 4\ 3)$, verified $\gamma^{-1}\gamma$ returns `[1,2,3,4]`=$e$.
+**Note taught:** a cycle can start from any of its elements; $(2\ 4\ 3\ 1)=(1\ 2\ 4\ 3)$ are the same cycle — don't mistake a different starting point for a wrong answer.
+
+## Connecting back to the cube — a turn IS a permutation
+
+Number the 8 corner **slots** 1–8. A `U` (top clockwise) only moves the 4 top corners. With top slots 1,2,3,4 clockwise:
+$$U = (1\ 2\ 3\ 4)$$
+(bottom 5,6,7,8 fixed). This captures only **position**, not **orientation** (each slot has 3 twist states, needs an extra $\mathbb{Z}_3$ structure — Lesson 7). Today: position layer only = pure $S_8$.
+
+Learner exercise (correct): $U^2=(1\ 3)(2\ 4)$ — "every corner goes to its diagonal", two disjoint transpositions.
+
+**Structure observation (foreshadows Lesson 3 order):** $U^1=(1234),U^2=(13)(24),U^3=(1432),U^4=e$. The element $U$ has **order 4**; $\{e,U,U^2,U^3\}\cong C_4$ — permutations, cube, and cyclic group fully converge.
+
+## Lesson 2 knowledge map
+| Concept | Key point |
+|---------|-----------|
+| Permutation | bijection on $\{1..n\}$; $\lvert S_n\rvert=n!$ |
+| Notation | two-line <-> cycle; disjoint-cycle decomposition |
+| Composition | $\tau\sigma$ = first $\sigma$ then $\tau$ (right->left); non-Abelian for $n\ge3$ |
+| Inverse | reverse arrows/cycles; $(\tau\sigma)^{-1}=\sigma^{-1}\tau^{-1}$ |
+| Cube link | turn = permutation; $U=(1234)$; position layer = $S_8$ (orientation -> Lesson 7) |
+
+## Next lesson
+**Lesson 3: Order, Subgroups, Generators.** Formalize $|U|=4$ (order of an element), subgroup test, generators $\langle g_1,\dots\rangle$, Cayley graph — toward $\langle R,U,F\rangle$ generating the cube group.
