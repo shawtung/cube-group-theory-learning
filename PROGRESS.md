@@ -1,8 +1,8 @@
 # Teaching Log & Progress Tracker
 
 ## Current Status
-- **Current Lesson**: Lesson 2 (Permutations) **COMPLETE** (incl. all formal exercises); next up Lesson 3 (Order, Subgroups, Generators)
-- **Last Session**: 2026-06-04 (evening)
+- **Current Lesson**: Lesson 3 (Order, Subgroups, Generators) **IN PROGRESS** — covered element order, proved |τ| = lcm of disjoint cycle lengths, started group order. Next: enumerate possible element orders in S_4, then subgroups.
+- **Last Session**: 2026-06-08
 
 ## Progress
 
@@ -10,7 +10,7 @@
 |--------|-------|--------|--------------|----------------|-------|
 | 1 | What is a Group? | completed | 2026-05-15 | 2026-06-02 | Solid grasp. Asked sharp questions re: binary operation requirement, associativity vs commutativity (grouping vs ordering). All 3 exercises correct; recognized C4 across multiple disguises. |
 | 2 | Permutations | completed | 2026-06-04 | 2026-06-04 | Bijection def, $|S_n|=n!$, two-line & cycle notation, disjoint cycles, composition (right-to-left), inverse, cube link ($U=(1234)$). Deep dives: position-vs-label / active-passive; cubing convention clash. All in-chat AND all 5 formal exercises + stretch correct. |
-| 3 | Order, Subgroups, Generators | not-started | | | |
+| 3 | Order, Subgroups, Generators | in-progress | 2026-06-07 | | Element order def; proved |τ|=lcm(cycle lengths) via single-cycle order=length + disjoint independence; group order vs element order distinction; Lagrange hook planted. Subgroups/generators still to come. |
 | 4 | Parity and Alternating Group | not-started | | | |
 | 5 | Homomorphisms and Isomorphisms | not-started | | | |
 | 6 | Direct and Semi-direct Products | not-started | | | |
@@ -76,3 +76,14 @@
   - Q5: (a) recognized $M$ moves all 8 corners ⇒ whole-cube rotation ($x$), not a single face turn (which moves only 4). (b) $M^2=(1\,8)(2\,7)(3\,6)(4\,5)$. (c) $|M|=\text{lcm}(4,4)=4$.
   - Stretch: $|(1\,2\,3)(4\,5)|=\text{lcm}(3,2)=6$. Learner already internalized order = lcm of disjoint cycle lengths (previews L3).
 - Lesson 2 fully closed. Next: begin Lesson 3 (Order, Subgroups, Generators).
+
+### Session 7 - 2026-06-07/08 (Lesson 3 start)
+- Began **Lesson 3 (Order, Subgroups, Generators).**
+- **Step 1 — element order:** defined $|g|=$ least $n>0$ with $g^n=e$. Learner confirmed $|U|=4$. Learner's geometric reason ("$U$ rotates a square, $4\times90°=360°$") accepted for $U$; tutor added the *universal* reason: finite state set + invertibility ⇒ the first repeat must return to the start (if $g^a(s)=g^b(s)$ apply $g^{-a}$), so order always exists.
+- **Step 2/3 — proved the lcm theorem** (upgraded from L2 conjecture to learner-proved theorem):
+  - Block A: a length-$k$ cycle has order exactly $k$ (track element 1 going around the ring; must complete full loops ⇒ min $j=k$). Learner's intuition: "all positions have equal status, complete one loop together."
+  - Block B: disjoint cycles commute ⇒ $\tau^j=c_1^j\cdots c_m^j$; all home simultaneously ⇒ $j$ multiple of every $\ell_i$ ⇒ $|\tau|=\operatorname{lcm}(\ell_1,\dots,\ell_m)$. Learner answered $\operatorname{lcm}(3,2)=6$ and wrote the general formula correctly.
+  - Stressed the hidden **disjoint** premise (needed for $\tau^j$ to split). Speed-cubing application noted: a PLL = $(abc)(def)$ has order $\operatorname{lcm}(3,3)=3$ → repeat 3× restores.
+- **Step 4 — group order vs element order:** clarified two meanings of "order"; $|S_3|=6$, $|S_8|=40320$, $|G_{2x2}|=3{,}674{,}160$. Planted **Lagrange** hook ($|g|\mid|G|$).
+- **Pending question (resume here):** asked learner for $|S_4|=24$ and the set of possible element orders in $S_4$ (enumerate disjoint-cycle shapes of 4 points, apply lcm). Learner paused to save progress before answering.
+- Next: finish the $S_4$ element-order enumeration, then Step 5 (subgroups + subgroup test) and Step 6 (generators, Cayley graph, Lagrange).
