@@ -1,7 +1,7 @@
 # Teaching Log & Progress Tracker
 
 ## Current Status
-- **Current Lesson**: Lesson 3 (Order, Subgroups, Generators) **COMPLETE** (2026-06-08); next up Lesson 4 (Parity and the Alternating Group)
+- **Current Lesson**: Lesson 4 (Parity and the Alternating Group) **IN PROGRESS** — covered transpositions, parity theorem, sign as Z2/±1, $A_n$ ($|A_n|=n!/2$). Paused mid Step 5 (cube interface). Next: answer "$k$ odd perms → parity depends on parity of $k$", then why a 2-swap is unreachable.
 - **Last Session**: 2026-06-08
 
 ## Progress
@@ -11,7 +11,7 @@
 | 1 | What is a Group? | completed | 2026-05-15 | 2026-06-02 | Solid grasp. Asked sharp questions re: binary operation requirement, associativity vs commutativity (grouping vs ordering). All 3 exercises correct; recognized C4 across multiple disguises. |
 | 2 | Permutations | completed | 2026-06-04 | 2026-06-04 | Bijection def, $|S_n|=n!$, two-line & cycle notation, disjoint cycles, composition (right-to-left), inverse, cube link ($U=(1234)$). Deep dives: position-vs-label / active-passive; cubing convention clash. All in-chat AND all 5 formal exercises + stretch correct. |
 | 3 | Order, Subgroups, Generators | completed | 2026-06-07 | 2026-06-08 | Element order def; proved |τ|=lcm(cycle lengths); group vs element order; $S_n$ degree-vs-order naming; subgroups + subgroup test (+ one-step finite test); cyclic subgroups & generators; all 6 subgroups of $S_3$; coprime-order subgroups intersect trivially. Lagrange hook. All exercises correct. |
-| 4 | Parity and Alternating Group | not-started | | | |
+| 4 | Parity and Alternating Group | in-progress | 2026-06-08 | | Transpositions ($k$-cycle = $k-1$ transpositions, learner's bubble-sort insight); parity theorem (well-defined even/odd); sign as Z2 (add mod 2) $\cong$ ±1 (multiply); $A_n$ = even perms, $|A_n|=n!/2$. $A_3,A_4$ enumerated. Cube interface still to come. |
 | 5 | Homomorphisms and Isomorphisms | not-started | | | |
 | 6 | Direct and Semi-direct Products | not-started | | | |
 | 7 | Modeling the 2x2 Cube | not-started | | | |
@@ -100,3 +100,15 @@
 - Terminology taught: $\cong$ (isomorphic = same structure, different names; formalized L5); $S_n$ = degree-$n$ symmetric group (degree=points, order=$n!$); trivial subgroups ($\{e\}$ and $G$); proper/nontrivial.
 - Archived full content to lessons/lesson-03.md; Q1 solution + closing recorded in exercises/lesson-03-exercises.md.
 - Next: **Lesson 4 (Parity and the Alternating Group).**
+
+### Session 9 - 2026-06-08 (Lesson 4 start)
+- Began **Lesson 4 (Parity & Alternating Group).** Cube motivation: illegal states (single 2-swap, single edge flip) are unreachable — parity is the invariant.
+- **Transpositions:** any perm = product of transpositions; $k$-cycle = $k-1$ transpositions via $(a_1\dots a_k)=(a_1a_2)(a_2a_3)\cdots$. Learner W: $(1\,2\,3\,4)=(1\,2)(2\,3)(3\,4)$ ✓.
+  - **Learner's bubble-sort insight:** executing right-to-left = one bubble-sort pass; rightmost element travels left while others shift right one slot. Tutor named two payoffs: (1) adjacent transpositions generate $S_n$; (2) parity = inversion-count parity.
+- **Parity theorem:** transposition count's parity is invariant (decomposition not unique, parity is). Even/odd well-defined. Learner classified (a)$(1\,2)$ odd (b)$(1\,2\,3)$ even (c)$(1\,2\,3\,4)$ odd (d)$(1\,3)(2\,4)$ even ✓. Rule: $k$-cycle parity = parity of $k-1$ (even-length cycle = odd perm).
+- **Sign / composition rule:** parity adds (count adds). Learner initially mis-stated table (said even×odd=even); corrected via concrete check. **Learner's own insight: "it's addition, not multiplication"** — affirmed: sign = Z2 (even→0, odd→1, add mod 2) $\cong$ ($\{\pm1\},\times)$ via $n\mapsto(-1)^n$. Root cause of slip: hadn't yet accepted the even=+1/odd=−1 encoding. Redid: (a)odd (b)even (c)even (d)$e$=even ✓. Noted $e$ always even; $\sigma,\sigma^{-1}$ same parity.
+- **Alternating group $A_n$:** even perms form a subgroup (closure even×even=even, $e$ even, inverses same parity); odd perms do NOT (no $e$, not closed). $|A_n|=n!/2$ (multiply-by-transposition bijection between halves). $A_3=\{e,(123),(132)\}$.
+  - **Learner error caught:** first gave $|A_4|=9$, missing the $2+2$ double-transpositions. Corrected to 12 = $1(e)+3(2{+}2)+8(3\text{-cycles})$. Lesson reinforced: use $n!/2$ as anchor + enumerate by cycle shape, cross-check. The 3 double-transpositions $=U^2$-type (even, legal on cube); they + $e$ form Klein $V_4$ (deferred).
+  - **Learner found** $(1\,2)(2\,3)=(1\,3)(1\,2)$ (non-unique decomposition, parity preserved ✓). Tutor initially flagged a convention slip but **retracted it** after learner clarified his steps: he rewrote $(1\,2\,3)=(3\,1\,2)$ (same cycle, new start) THEN applied the formula $(a_1a_2a_3)=(a_1a_2)(a_2a_3)$ — fully right-to-left, no error. Confirmed the formula $(abc)=(ab)(bc)$ is itself right-to-left (left-to-right convention would write $(bc)(ab)$).
+- **Step 5 (cube interface) STARTED but PAUSED** (learner low on energy). Set up: a face turn on 2x2 corners = 4-cycle = odd permutation; reachable state = product of $k$ face turns. Posed the pending question: **"$k$ odd permutations multiplied — total parity depends on what?"** (answer hinges on parity of $k$). Learner paused before answering.
+- **RESUME HERE:** answer the parity-of-$k$ question, then derive why a single 2-swap (odd) is unreachable on the cube / the legal-move parity argument. Then formal exercises + archive lessons/lesson-04.md.
