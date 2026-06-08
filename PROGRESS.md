@@ -1,7 +1,7 @@
 # Teaching Log & Progress Tracker
 
 ## Current Status
-- **Current Lesson**: Lesson 3 (Order, Subgroups, Generators) **IN PROGRESS** — covered element order, proved |τ| = lcm of disjoint cycle lengths, started group order. Next: enumerate possible element orders in S_4, then subgroups.
+- **Current Lesson**: Lesson 3 (Order, Subgroups, Generators) **COMPLETE** (2026-06-08); next up Lesson 4 (Parity and the Alternating Group)
 - **Last Session**: 2026-06-08
 
 ## Progress
@@ -10,7 +10,7 @@
 |--------|-------|--------|--------------|----------------|-------|
 | 1 | What is a Group? | completed | 2026-05-15 | 2026-06-02 | Solid grasp. Asked sharp questions re: binary operation requirement, associativity vs commutativity (grouping vs ordering). All 3 exercises correct; recognized C4 across multiple disguises. |
 | 2 | Permutations | completed | 2026-06-04 | 2026-06-04 | Bijection def, $|S_n|=n!$, two-line & cycle notation, disjoint cycles, composition (right-to-left), inverse, cube link ($U=(1234)$). Deep dives: position-vs-label / active-passive; cubing convention clash. All in-chat AND all 5 formal exercises + stretch correct. |
-| 3 | Order, Subgroups, Generators | in-progress | 2026-06-07 | | Element order def; proved |τ|=lcm(cycle lengths) via single-cycle order=length + disjoint independence; group order vs element order distinction; Lagrange hook planted. Subgroups/generators still to come. |
+| 3 | Order, Subgroups, Generators | completed | 2026-06-07 | 2026-06-08 | Element order def; proved |τ|=lcm(cycle lengths); group vs element order; $S_n$ degree-vs-order naming; subgroups + subgroup test (+ one-step finite test); cyclic subgroups & generators; all 6 subgroups of $S_3$; coprime-order subgroups intersect trivially. Lagrange hook. All exercises correct. |
 | 4 | Parity and Alternating Group | not-started | | | |
 | 5 | Homomorphisms and Isomorphisms | not-started | | | |
 | 6 | Direct and Semi-direct Products | not-started | | | |
@@ -87,3 +87,16 @@
 - **Step 4 — group order vs element order:** clarified two meanings of "order"; $|S_3|=6$, $|S_8|=40320$, $|G_{2x2}|=3{,}674{,}160$. Planted **Lagrange** hook ($|g|\mid|G|$).
 - **Pending question (resume here):** asked learner for $|S_4|=24$ and the set of possible element orders in $S_4$ (enumerate disjoint-cycle shapes of 4 points, apply lcm). Learner paused to save progress before answering.
 - Next: finish the $S_4$ element-order enumeration, then Step 5 (subgroups + subgroup test) and Step 6 (generators, Cayley graph, Lagrange).
+
+### Session 8 - 2026-06-08 (Lesson 3 complete)
+- Synced repo (git pull picked up Session 7 PROGRESS edits from another machine). **Completed Lesson 3.**
+- **$S_4$ element orders** (learner correct): partitions $4,3{+}1,2{+}2,2{+}1{+}1,1^4$ → orders $\{1,2,3,4\}$. Tutor caution: equals $\{1..4\}$ only by coincidence; $S_5$ has order-6 element ($3{+}2$); general max = Landau's function. Lagrange double-check (6,8,12,24 don't occur).
+- **Subgroups + subgroup test:** definition $H\le G$; two-step test (closure + inverses, assoc inherited, $e$ free); one-step finite test (finite+closed⇒subgroup, reusing "finite⇒cycles" argument). W2 checks correct: $\{e,(1\,2)\}$ yes $\cong C_2$, $\{e,(1\,2\,3)\}$ no (closure fails). Insight: containing order-$n$ element forces all its powers.
+- **Generators / cyclic subgroups:** $\langle g\rangle$ size $=|g|$, smallest subgroup containing $g$; $\langle U\rangle\cong C_4$ = the L2-finale convergence now named. $\langle g_1,\dots\rangle$ = smallest subgroup containing all seeds. Endgame: $G_{2\times2}=\langle R,U,F\rangle$.
+- **W3** (learner correct): $\langle(1\,2\,3)\rangle$ size 3; $\langle(1\,2\,3),(1\,2)\rangle=S_3$. **Learner self-diagnosed a left-to-right vs right-to-left convention slip** ($ab$ naming) — noted set generated is convention-independent.
+- **Q1 (formal, learner correct):** all 6 subgroups of $S_3$ enumerated with sizes/cyclicity; $\langle(1\,2\,3)\rangle=\langle(1\,3\,2)\rangle$; Lagrange completeness check.
+- **Learner's 3 insights named:** (1) product of two transpositions = 3-cycle, but they *generate* all $S_3$ (Lagrange: divisible by 2 and 3); (2) order-2 + order-3 seed → $S_3$; (3) deepest — $S_3$ is **not cyclic**, needs ≥2 seeds (cyclic vs non-cyclic watershed; cube highly non-cyclic).
+- **Closing (correct):** $\langle(1\,2\,3)\rangle\cap\langle(1\,2)\rangle=\{e\}$; mini-theorem: coprime-order subgroups intersect trivially (recurs at L7 position/orientation split).
+- Terminology taught: $\cong$ (isomorphic = same structure, different names; formalized L5); $S_n$ = degree-$n$ symmetric group (degree=points, order=$n!$); trivial subgroups ($\{e\}$ and $G$); proper/nontrivial.
+- Archived full content to lessons/lesson-03.md; Q1 solution + closing recorded in exercises/lesson-03-exercises.md.
+- Next: **Lesson 4 (Parity and the Alternating Group).**
