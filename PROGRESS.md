@@ -1,7 +1,8 @@
 # Teaching Log & Progress Tracker
 
 ## Current Status
-- **Current Lesson**: Lesson 4 (Parity and the Alternating Group) **IN PROGRESS** — covered transpositions, parity theorem, sign as Z2/±1, $A_n$ ($|A_n|=n!/2$). Paused mid Step 5 (cube interface). Next: answer "$k$ odd perms → parity depends on parity of $k$", then why a 2-swap is unreachable.
+- **Current Lesson**: Lesson 4 (Parity and the Alternating Group) **COMPLETE** (2026-06-09); next up Lesson 5 (Homomorphisms and Isomorphisms)
+- **Last Session**: 2026-06-09
 - **Last Session**: 2026-06-08
 
 ## Progress
@@ -11,7 +12,7 @@
 | 1 | What is a Group? | completed | 2026-05-15 | 2026-06-02 | Solid grasp. Asked sharp questions re: binary operation requirement, associativity vs commutativity (grouping vs ordering). All 3 exercises correct; recognized C4 across multiple disguises. |
 | 2 | Permutations | completed | 2026-06-04 | 2026-06-04 | Bijection def, $|S_n|=n!$, two-line & cycle notation, disjoint cycles, composition (right-to-left), inverse, cube link ($U=(1234)$). Deep dives: position-vs-label / active-passive; cubing convention clash. All in-chat AND all 5 formal exercises + stretch correct. |
 | 3 | Order, Subgroups, Generators | completed | 2026-06-07 | 2026-06-08 | Element order def; proved |τ|=lcm(cycle lengths); group vs element order; $S_n$ degree-vs-order naming; subgroups + subgroup test (+ one-step finite test); cyclic subgroups & generators; all 6 subgroups of $S_3$; coprime-order subgroups intersect trivially. Lagrange hook. All exercises correct. |
-| 4 | Parity and Alternating Group | in-progress | 2026-06-08 | | Transpositions ($k$-cycle = $k-1$ transpositions, learner's bubble-sort insight); parity theorem (well-defined even/odd); sign as Z2 (add mod 2) $\cong$ ±1 (multiply); $A_n$ = even perms, $|A_n|=n!/2$. $A_3,A_4$ enumerated. Cube interface still to come. |
+| 4 | Parity and Alternating Group | completed | 2026-06-08 | 2026-06-09 | Transpositions ($k$-cycle=$k-1$, bubble-sort insight); parity theorem; sign=Z2(add)≅±1(mult); $A_n$, $|A_n|=n!/2$; $A_3,A_4$. Cube app **corrected**: 三阶 PLL parity (face turn even ⇒ no lone 2-swap); 二阶 has NO position-parity constraint (illegal states = orientation, deferred to L7). Syllabus updated. |
 | 5 | Homomorphisms and Isomorphisms | not-started | | | |
 | 6 | Direct and Semi-direct Products | not-started | | | |
 | 7 | Modeling the 2x2 Cube | not-started | | | |
@@ -112,3 +113,14 @@
   - **Learner found** $(1\,2)(2\,3)=(1\,3)(1\,2)$ (non-unique decomposition, parity preserved ✓). Tutor initially flagged a convention slip but **retracted it** after learner clarified his steps: he rewrote $(1\,2\,3)=(3\,1\,2)$ (same cycle, new start) THEN applied the formula $(a_1a_2a_3)=(a_1a_2)(a_2a_3)$ — fully right-to-left, no error. Confirmed the formula $(abc)=(ab)(bc)$ is itself right-to-left (left-to-right convention would write $(bc)(ab)$).
 - **Step 5 (cube interface) STARTED but PAUSED** (learner low on energy). Set up: a face turn on 2x2 corners = 4-cycle = odd permutation; reachable state = product of $k$ face turns. Posed the pending question: **"$k$ odd permutations multiplied — total parity depends on what?"** (answer hinges on parity of $k$). Learner paused before answering.
 - **RESUME HERE:** answer the parity-of-$k$ question, then derive why a single 2-swap (odd) is unreachable on the cube / the legal-move parity argument. Then formal exercises + archive lessons/lesson-04.md.
+
+### Session 10 - 2026-06-09 (Lesson 4 complete, with a real correction)
+- Resumed Step 5. Learner answered the pending question correctly: **$k$ odd permutations → total parity $=k\bmod 2$.**
+- **Tutor made a genuine error and learner caught it.** Tutor's first Step-5 story tried to argue "二阶: a 2-corner swap is illegal" via a vague "conserved quantity" while dodging orientation (untaught). Learner pushed back: the argument was muddled and depended on orientation which isn't learned yet, so it should be deferred. **Tutor conceded — the argument was actually WRONG, not just awkward.**
+  - **Correct picture:** 二阶 has NO position-parity constraint (single face turn = one 4-cycle = ODD ⇒ all $8!$ corner arrangements reachable). 二阶's illegal states are **orientation**-based ($\sum o_i\equiv0\bmod3$) → **deferred to Lesson 7**.
+  - **The real parity payoff is 三阶 (position only):** face turn = (4-cycle corners)×(4-cycle edges) = odd×odd = EVEN ⇒ every reachable state even ⇒ a lone 2-swap (odd) is unreachable = **PLL parity**; min pure-position move = 3-cycle.
+- **Two learner corrections logged:** (1) prefers terminology **二阶/三阶** over 2x2/3x3 (now the course standard). (2) Refuted tutor's claim that corner/edge parity coupling "affects feel" — learner plays 二阶 as the 8 corners of a 三阶 using 三阶 algorithms, so no independent 二阶 feel. Speculation withdrawn.
+- **Syllabus updated** (per learner request, to not forget at L7): L4 entry now states the corrected 三阶-PLL-parity payoff + 二阶-no-constraint note; L7 entry carries over "explain 二阶 illegal states via orientation here."
+- Archived corrected full content to lessons/lesson-04.md (tutor's wrong argument flagged as corrected); exercises/lesson-04-exercises.md created (Q1 assigned, not yet solved).
+- **Meta:** good example of the rigor the learner profile promises — he refuses hand-wavy "conserved quantity" hand-waving and demands the cube application be honest about what's been taught.
+- Next: **Lesson 5 (Homomorphisms and Isomorphisms)** — headline example $\operatorname{sgn}:S_n\to\{\pm1\}$ (today's sign), kernel $=A_n$.

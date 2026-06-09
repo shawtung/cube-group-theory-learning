@@ -33,6 +33,8 @@
 - Even vs odd permutations (奇置换 / 偶置换)
 - Sign homomorphism $\text{sgn}: S_n \to \{+1, -1\}$
 - Alternating group $A_n$
+- **Cube application (corrected):** the parity payoff is the **三阶 (3x3) PLL parity** — a face turn = 4-cycle on corners × 4-cycle on edges = even, so no single 2-swap is reachable (minimum pure-position move = 3-cycle). This uses position only, no orientation.
+- **NOTE:** 二阶 (2x2) has NO position-parity constraint (single face turn = one 4-cycle = odd ⇒ all $8!$ corner arrangements reachable). 二阶's illegal states come from **orientation** → deferred to Lesson 7.
 - **Exercise**: classify permutations by parity
 
 ### Lesson 5: Homomorphisms and Isomorphisms
@@ -55,6 +57,7 @@
 - Label corners: position + orientation (位置 + 朝向)
 - State space: $(p, o) \in S_8 \times \mathbb{Z}_3^8$
 - Constraint: $\sum o_i \equiv 0 \pmod{3}$
+- **Carryover from Lesson 4:** explain 二阶's illegal states here — they come from the orientation constraint $\sum o_i \equiv 0 \pmod 3$, NOT from position parity (二阶 has no position-parity constraint). This is the deferred "why some 二阶 states are unsolvable" discussion.
 - Fix a reference corner -> effective group
 - **Exercise**: represent a specific scramble as $(p, o)$
 
