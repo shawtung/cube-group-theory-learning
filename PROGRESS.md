@@ -1,7 +1,7 @@
 # Teaching Log & Progress Tracker
 
 ## Current Status
-- **Current Lesson**: Lesson 4 (Parity and the Alternating Group) **COMPLETE** (2026-06-09); next up Lesson 5 (Homomorphisms and Isomorphisms)
+- **Current Lesson**: Lesson 5 (Homomorphisms and Isomorphisms) **IN PROGRESS** — covered homomorphism definition, isomorphism = bijective homo, $\cong$ as equivalence relation (transitive/symmetric/reflexive), automorphisms preview. **Paused before kernel/image** (learner digesting the jump in abstraction). Practice set added to exercises/lesson-05-exercises.md for tomorrow.
 - **Last Session**: 2026-06-09
 - **Last Session**: 2026-06-08
 
@@ -13,7 +13,7 @@
 | 2 | Permutations | completed | 2026-06-04 | 2026-06-04 | Bijection def, $|S_n|=n!$, two-line & cycle notation, disjoint cycles, composition (right-to-left), inverse, cube link ($U=(1234)$). Deep dives: position-vs-label / active-passive; cubing convention clash. All in-chat AND all 5 formal exercises + stretch correct. |
 | 3 | Order, Subgroups, Generators | completed | 2026-06-07 | 2026-06-08 | Element order def; proved |τ|=lcm(cycle lengths); group vs element order; $S_n$ degree-vs-order naming; subgroups + subgroup test (+ one-step finite test); cyclic subgroups & generators; all 6 subgroups of $S_3$; coprime-order subgroups intersect trivially. Lagrange hook. All exercises correct. |
 | 4 | Parity and Alternating Group | completed | 2026-06-08 | 2026-06-09 | Transpositions ($k$-cycle=$k-1$, bubble-sort insight); parity theorem; sign=Z2(add)≅±1(mult); $A_n$, $|A_n|=n!/2$; $A_3,A_4$. Cube app **corrected**: 三阶 PLL parity (face turn even ⇒ no lone 2-swap); 二阶 has NO position-parity constraint (illegal states = orientation, deferred to L7). Syllabus updated. |
-| 5 | Homomorphisms and Isomorphisms | not-started | | | |
+| 5 | Homomorphisms and Isomorphisms | in-progress | 2026-06-09 | | Homo def ($\varphi(ab)=\varphi(a)\varphi(b)$); iso = bijective homo; $\cong$ as relation (∃ iso map) = equivalence relation (id/inverse/compose → reflexive/symmetric/transitive); homo structure as class invariant; $\operatorname{Aut}(G)$ & $C_4$ self-map $U\mapsto U^3$ preview; "homo determined by generator images" for cyclic groups. Kernel/image still to come. |
 | 6 | Direct and Semi-direct Products | not-started | | | |
 | 7 | Modeling the 2x2 Cube | not-started | | | |
 | 8 | Generators of Pocket Cube Group | not-started | | | |
@@ -124,3 +124,13 @@
 - Archived corrected full content to lessons/lesson-04.md (tutor's wrong argument flagged as corrected); exercises/lesson-04-exercises.md created (Q1 assigned, not yet solved).
 - **Meta:** good example of the rigor the learner profile promises — he refuses hand-wavy "conserved quantity" hand-waving and demands the cube application be honest about what's been taught.
 - Next: **Lesson 5 (Homomorphisms and Isomorphisms)** — headline example $\operatorname{sgn}:S_n\to\{\pm1\}$ (today's sign), kernel $=A_n$.
+
+### Session 11 - 2026-06-09 (Lesson 5 start: homomorphisms/isomorphisms)
+- Began **Lesson 5.** Motivated homomorphism from L4's $\operatorname{sgn}(\tau\sigma)=\operatorname{sgn}(\tau)\operatorname{sgn}(\sigma)$: a homo "translates one group's operation into another's" ($\varphi(ab)=\varphi(a)*\varphi(b)$). Isomorphism = **bijective** homomorphism; homo is the looser notion (allows information loss, e.g. sgn collapses $n!$ perms to 2 values).
+- Warm-up (learner correct): $\varphi:\mathbb{Z}\to\mathbb{Z},\ n\mapsto 2n$ is a homo ($2(a+b)=2a+2b$); injective but not surjective → homo, not iso. Good illustration "homo weaker than iso."
+- **Learner's sharp conceptual question:** isomorphism = a property of a *map*, but earlier $\cong$ was stated as a relation between *groups* without mentioning a map. Resolved with a **two-level distinction**: (level 1) "$\varphi$ is an isomorphism" describes a map (bijective homo); (level 2) "$G\cong H$" is a relation = **∃ an isomorphism map**. The L3 table $e\leftrightarrow0,U\leftrightarrow1,\dots$ WAS that map, just unnamed. Analogy: "cities connected" (relation) vs "∃ a road" (the map).
+- **Learner Q (transitivity):** $G\cong H, H\cong I \Rightarrow G\cong I$? Yes — proved by composing iso maps ($\psi\circ\varphi$ is bijective + preserves operation via two applications). Generalized: $\cong$ is an **equivalence relation** (reflexive=id, symmetric=inverse map, transitive=composition); these three = closure of iso maps under identity/inverse/composition → seeds $\operatorname{Aut}(G)$. Payoff: $\cong$ partitions groups into classes; "essentially the same group" ($C_4$ class etc.) is well-defined.
+- **Learner Q (deep):** does discussing homomorphisms on isomorphic groups still matter? Answer: between the two iso groups themselves — little new; BUT isomorphism preserves their ENTIRE homomorphism structure (Hom(G,K)↔Hom(H,K)), so studying any representative studies the whole class (homo structure = class invariant). Richest case: $G\to G$ self-maps = automorphisms; $\operatorname{Aut}(G)$ nontrivial even when $G\cong G$ trivial. Cube link planted: cube symmetries (R/L mirror, global rotation) are automorphisms; **conjugation $g\mapsto xgx^{-1}$ = inner automorphism = the group-theory essence of setup moves (Lesson 11)**.
+- **Learner Q (notation):** "$\varphi:U\mapsto U^3$" — isn't a map group-to-group? Clarified it's **shorthand**: $\varphi:C_4\to C_4$ fully, written out $e\mapsto e, U\mapsto U^3, U^2\mapsto U^2, U^3\mapsto U$ (rule $U^k\mapsto U^{3k}$). **Principle: a homomorphism from a cyclic group is uniquely determined by the image of its generator** ($\varphi(g^k)=\varphi(g)^k$ forced by operation-preservation). Caveat: for non-cyclic groups (e.g. $S_3$, cube $\langle R,U,F\rangle$) must specify ALL generators' images + they must respect relations (matters at L8).
+- **Learner flagged the abstraction jump** and chose to pause to digest. Requested extra worked examples + exercises on homo/iso for tomorrow. Created exercises/lesson-05-exercises.md with worked examples (det, exp/log, mod, sgn, $\mathbb{Z}\to\mathbb{Z}_n$, $C_4$ automorphism) + graded problem set.
+- **RESUME HERE (tomorrow):** after learner works the practice set, do kernel & image — $\ker(\operatorname{sgn})=A_n$ (the L4 alternating group returns), image, then first isomorphism theorem (intuition).
