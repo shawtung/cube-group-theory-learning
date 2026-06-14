@@ -1,9 +1,8 @@
 # Teaching Log & Progress Tracker
 
 ## Current Status
-- **Current Lesson**: Lesson 5 (Homomorphisms and Isomorphisms) **IN PROGRESS** — covered homomorphism definition, isomorphism = bijective homo, $\cong$ as equivalence relation (transitive/symmetric/reflexive), automorphisms preview. **Paused before kernel/image** (learner digesting the jump in abstraction). Practice set added to exercises/lesson-05-exercises.md for tomorrow.
-- **Last Session**: 2026-06-09
-- **Last Session**: 2026-06-08
+- **Current Lesson**: Lesson 5 (Homomorphisms and Isomorphisms) **IN PROGRESS** — all worked examples (A1–A8) reviewed, exercises B1–B6 completed. B7 (cube projection homo) attempted but deferred pending L6/L7 prerequisites. **Next: kernel & image.**
+- **Last Session**: 2026-06-14
 
 ## Progress
 
@@ -134,3 +133,24 @@
 - **Learner Q (notation):** "$\varphi:U\mapsto U^3$" — isn't a map group-to-group? Clarified it's **shorthand**: $\varphi:C_4\to C_4$ fully, written out $e\mapsto e, U\mapsto U^3, U^2\mapsto U^2, U^3\mapsto U$ (rule $U^k\mapsto U^{3k}$). **Principle: a homomorphism from a cyclic group is uniquely determined by the image of its generator** ($\varphi(g^k)=\varphi(g)^k$ forced by operation-preservation). Caveat: for non-cyclic groups (e.g. $S_3$, cube $\langle R,U,F\rangle$) must specify ALL generators' images + they must respect relations (matters at L8).
 - **Learner flagged the abstraction jump** and chose to pause to digest. Requested extra worked examples + exercises on homo/iso for tomorrow. Created exercises/lesson-05-exercises.md with worked examples (det, exp/log, mod, sgn, $\mathbb{Z}\to\mathbb{Z}_n$, $C_4$ automorphism) + graded problem set.
 - **RESUME HERE (tomorrow):** after learner works the practice set, do kernel & image — $\ker(\operatorname{sgn})=A_n$ (the L4 alternating group returns), image, then first isomorphism theorem (intuition).
+
+### Session 12 - 2026-06-13/14 (Lesson 5 exercises: worked examples + B problems)
+- Learner returned after 3-day break; had not done exercises. Went through **all 8 worked examples (A1–A8)** interactively, one by one. Key clarifications:
+  - A2: homo allows domain/codomain operations to DIFFER ($+$ → $\times$). This is the power of homo.
+  - A4: works for $GL_n$, not just $GL_2$; codomain must be $\mathbb{R}^{\times}$ (not $\mathbb{R}$) because $0$ has no inverse.
+  - A5: explained $\stackrel{?}{=}$ notation (verification in progress, not assertion). Clarified codomain vs image; codomain choice affects iso (surjectivity) but not homo. Mapping = function (no mathematical distinction, just naming convention).
+  - A6: generator maps to generator → auto; generator maps to non-generator → image collapses to proper subgroup.
+  - A7/A8: identity test as fast rejection; "constant offset non-distributable" is the intuitive reason $n+1$ fails. Learner analogy accepted: group homo = "群版本的线性" (linear map analog).
+- **Exercises B1–B6 completed:**
+  - B1: correct (homo, injective, not surjective, not iso). ✓
+  - B2: correct (trivial homo, loses all info). Tutor noted: trivial homo always valid, kernel = entire $G$. ✓
+  - B3: all correct — (a) reject ($\varphi(0)=5$), (b) pass ($\ln 1=0$), (c) reject ($\varphi(0)=1$). ✓
+  - B4: correct outputs, but initially said "injective" — self-corrected after tutor pointed out $\varphi(e)=\varphi(U^2)=e$. Non-injective, non-surjective, not auto. ✓
+  - B5: correct — $C_4 \not\cong V_4$ because $V_4$ has no order-4 element (not cyclic). Learner gave cube analogy: $V_4 \cong \{e,x2,y2,z2\}$. ✓
+  - B6: initially said only $U\mapsto U^3$; corrected — identity map $U\mapsto U$ also counts. $|\operatorname{Aut}(C_4)|=2=\phi(4)$. ✓
+- **B7 attempted** but learner found argument unclear. Tutor gave two explanations: (1) physical — position channel independent of orientation; (2) algebraic — projection of first coordinate in semi-direct product $(p_1,o_1)(p_2,o_2)=(p_1p_2, \ldots)$. Learner acknowledged both are beyond current prerequisites (semi-direct product = L6, cube model = L7); deferred to revisit after L7.
+- **Side explorations (learner-initiated):**
+  - Klein four-group $V_4$: derived multiplication table; proved $ab=c$ by exclusion (closure + cancellation). Physical verification: $x2 \circ y2 = z2$ via axis tracking.
+  - "All-order-2 groups must have $|G|=2^n$": proved via (1) all-order-2 implies abelian ($ab=(ab)^{-1}=b^{-1}a^{-1}=ba$); (2) structure = $\mathbb{F}_2$-vector space; (3) Lagrange: order-2 subgroups force $2\mid|G|$ repeatedly. Learner verified by failing to construct 5-element example.
+  - Lagrange theorem review at learner's request.
+- **Next:** kernel & image (formal definition), then first isomorphism theorem intuition. B7 revisit after L7.
