@@ -86,6 +86,19 @@ Hence $\ker\varphi$ is a subgroup of $G$. $\square$
 ### Meta-lesson
 The subtle distinction between **definition** (homo $\Leftrightarrow$ $\varphi(ab)=\varphi(a)\varphi(b)$) and **theorem** ($\varphi(e_G)=e_H$ is a *consequence*, derived by cancellation). Treating the theorem as part of the definition is the classic foundational slip.
 
+### Kernel 的判据作用（PROBLEM OPEN — learner answer not yet submitted）
+
+Kernel 不只是"一个子群"，它还**刻画了 $\varphi$ 是否单射**:
+
+> **Criterion.** $\varphi\text{ 是单射 (injective)}\ \iff\ \ker\varphi=\{e_G\}$
+
+- **($\Rightarrow$) 单射 $\Rightarrow$ 核只有 $e$:** 显然。单射下只有 $e_G$ 一个元素能映到 $e_H$(否则有两个元素映到同一个 $e_H$,违反单射)。
+
+- **($\Leftarrow$) 核只有 $e$ $\Rightarrow$ 单射: ⚠️ 待证。**
+  Tutor 的提示:假设 $\varphi(a)=\varphi(b)$,试着构造一个 kernel 的元素。
+
+  *(预期路径,learner 尚未提交:从 $\varphi(a)=\varphi(b)$ 两边作用 $\varphi(b)^{-1}$ 得 $\varphi(a)\varphi(b)^{-1}=e_H$;若能用同态性把 $\varphi(a)\varphi(b)^{-1}$ 写成 $\varphi(ab^{-1})$,则 $ab^{-1}\in\ker\varphi=\{e_G\}$,故 $ab^{-1}=e_G\Rightarrow a=b$。关键卡点:需要先证 $\varphi(b)^{-1}=\varphi(b^{-1})$,即同态保持逆元。)*
+
 ---
 
 ## Part 3 — Image & First Isomorphism Theorem (NOT YET TAUGHT)

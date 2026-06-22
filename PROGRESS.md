@@ -171,4 +171,7 @@
   - **Learner then proved the lemma** (after tutor's hint to use $e_G\cdot e_G=e_G$ + homomorphism def + cancellation in $H$): from $\varphi(e_G\cdot e_G)=\varphi(e_G)\cdot\varphi(e_G)=\varphi(e_G)$, cancel one $\varphi(e_G)$ to get $\varphi(e_G)=e_H$. ✓
   - **Inverses finished cleanly:** $e_H=\varphi(e_G)=\varphi(a\cdot a^{-1})=\varphi(a)*\varphi(a^{-1})=e_H*\varphi(a^{-1})$, cancel $e_H$ ⇒ $\varphi(a^{-1})=e_H$ ⇒ $a^{-1}\in\ker\varphi$. ✓
 - **Meta-lesson named:** the subtle but important distinction between *definition* (homo = $\varphi(ab)=\varphi(a)\varphi(b)$) and *theorem* ($\varphi(e_G)=e_H$ is a consequence, derived by cancellation). The learner's slip was treating the theorem as part of the definition. This is exactly the kind of foundational precision the learner profile targets.
-- **Next:** image ($\operatorname{im}\varphi=\varphi(G)$), then first isomorphism theorem (intuition: $G/\ker\varphi\cong\operatorname{im}\varphi$).
+- **Tail (in-progress, answer not yet submitted):** Kernel 的**判据作用** — tutor 给出判据 $\varphi\text{ 单射 (injective)}\iff\ker\varphi=\{e_G\}$。
+  - $\Rightarrow$ 方向(单射 ⇒ 核只有 $e$):显然(单射下只有 $e_G$ 能映到 $e_H$)。
+  - $\Leftarrow$ 方向(核只有 $e$ ⇒ 单射):**待证**。Tutor 提示:假设 $\varphi(a)=\varphi(b)$,试着构造一个 kernel 的元素。(预期路径:从 $\varphi(a)=\varphi(b)$ 推出 $\varphi(a)\varphi(b)^{-1}=e_H$,用同态性反推 $ab^{-1}\in\ker\varphi=\{e_G\}$,故 $a=b$。)
+- **Next:** (1) **先收尾这道挂着的判据题**(learner 提交 $\Leftarrow$ 方向证明),然后 (2) image $\operatorname{im}\varphi=\varphi(G)$,then first isomorphism theorem (intuition: $G/\ker\varphi\cong\operatorname{im}\varphi$).
