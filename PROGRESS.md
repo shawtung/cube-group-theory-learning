@@ -1,8 +1,8 @@
 # Teaching Log & Progress Tracker
 
 ## Current Status
-- **Current Lesson**: Lesson 5 (Homomorphisms and Isomorphisms) **IN PROGRESS** — all worked examples (A1–A8) reviewed, exercises B1–B6 completed. B7 (cube projection homo) attempted but deferred pending L6/L7 prerequisites. **Next: kernel & image.**
-- **Last Session**: 2026-06-14
+- **Current Lesson**: Lesson 5 (Homomorphisms and Isomorphisms) **IN PROGRESS** — worked examples (A1–A8) reviewed, exercises B1–B6 completed (B7 deferred to L7). **Kernel definition done**: $\ker\varphi=\{g\in G\mid\varphi(g)=e_H\}$; learner proved $\ker\varphi\le G$ (closure + inverses via the $\varphi(e_G)=e_H$ lemma). **Next: image, then first isomorphism theorem (intuition).**
+- **Last Session**: 2026-06-15
 
 ## Progress
 
@@ -12,7 +12,7 @@
 | 2 | Permutations | completed | 2026-06-04 | 2026-06-04 | Bijection def, $|S_n|=n!$, two-line & cycle notation, disjoint cycles, composition (right-to-left), inverse, cube link ($U=(1234)$). Deep dives: position-vs-label / active-passive; cubing convention clash. All in-chat AND all 5 formal exercises + stretch correct. |
 | 3 | Order, Subgroups, Generators | completed | 2026-06-07 | 2026-06-08 | Element order def; proved |τ|=lcm(cycle lengths); group vs element order; $S_n$ degree-vs-order naming; subgroups + subgroup test (+ one-step finite test); cyclic subgroups & generators; all 6 subgroups of $S_3$; coprime-order subgroups intersect trivially. Lagrange hook. All exercises correct. |
 | 4 | Parity and Alternating Group | completed | 2026-06-08 | 2026-06-09 | Transpositions ($k$-cycle=$k-1$, bubble-sort insight); parity theorem; sign=Z2(add)≅±1(mult); $A_n$, $|A_n|=n!/2$; $A_3,A_4$. Cube app **corrected**: 三阶 PLL parity (face turn even ⇒ no lone 2-swap); 二阶 has NO position-parity constraint (illegal states = orientation, deferred to L7). Syllabus updated. |
-| 5 | Homomorphisms and Isomorphisms | in-progress | 2026-06-09 | | Homo def ($\varphi(ab)=\varphi(a)\varphi(b)$); iso = bijective homo; $\cong$ as relation (∃ iso map) = equivalence relation (id/inverse/compose → reflexive/symmetric/transitive); homo structure as class invariant; $\operatorname{Aut}(G)$ & $C_4$ self-map $U\mapsto U^3$ preview; "homo determined by generator images" for cyclic groups. Kernel/image still to come. |
+| 5 | Homomorphisms and Isomorphisms | in-progress | 2026-06-09 | | Homo def ($\varphi(ab)=\varphi(a)\varphi(b)$); iso = bijective homo; $\cong$ as relation (∃ iso map) = equivalence relation (id/inverse/compose → reflexive/symmetric/transitive); homo structure as class invariant; $\operatorname{Aut}(G)$ & $C_4$ self-map $U\mapsto U^3$ preview; "homo determined by generator images" for cyclic groups. **Kernel done**: $\ker\varphi=\{g\in G\mid\varphi(g)=e_H\}$; three examples ($\ker\operatorname{sgn}=A_n$, $\ker\det=SL_n$, $\ker(k\bmod n)=n\mathbb{Z}$); proved $\ker\varphi\le G$ via two-step test + the $\varphi(e_G)=e_H$ lemma. Image + first iso theorem still to come. |
 | 6 | Direct and Semi-direct Products | not-started | | | |
 | 7 | Modeling the 2x2 Cube | not-started | | | |
 | 8 | Generators of Pocket Cube Group | not-started | | | |
@@ -154,3 +154,21 @@
   - "All-order-2 groups must have $|G|=2^n$": proved via (1) all-order-2 implies abelian ($ab=(ab)^{-1}=b^{-1}a^{-1}=ba$); (2) structure = $\mathbb{F}_2$-vector space; (3) Lagrange: order-2 subgroups force $2\mid|G|$ repeatedly. Learner verified by failing to construct 5-element example.
   - Lagrange theorem review at learner's request.
 - **Next:** kernel & image (formal definition), then first isomorphism theorem intuition. B7 revisit after L7.
+
+### Session 13 - 2026-06-15 (Lesson 5 continues: kernel)
+- Resumed after the practice-set session. Opened with the **motivating question**: $\operatorname{sgn}:S_n\to\{\pm1\}$ "crushes" $n!$ perms to 2 values — what is the set crushed to $+1$, and what structure does it have? Learner answered correctly: the **alternating group $A_n$** (even permutations, decomposable into an even number of transpositions), a subgroup of $S_n$.
+- **Kernel definition** formalized:
+  $$\ker\varphi=\{g\in G\mid\varphi(g)=e_H\}$$
+- Reframed three known examples in kernel language:
+  | homomorphism | kernel | intuition |
+  |---|---|---|
+  | $\operatorname{sgn}:S_n\to\{\pm1\}$ | $A_n$ | "those crushed to $+1$" |
+  | $\det:GL_n(\mathbb R)\to\mathbb R^\times$ | $SL_n$ (det=1 matrices) | "volume-preserving linear maps" |
+  | $\mathbb Z\to\mathbb Z_n,\ k\mapsto k\bmod n$ | $n\mathbb Z=\{0,\pm n,\pm2n,\ldots\}$ | "multiples of $n$ all map to 0" |
+- **Learner proved $\ker\varphi\le G$** via the two-step subgroup test (closure + inverses), prompted only by "if $\varphi(a)=e_H$ and $\varphi(b)=e_H$, what are $\varphi(ab)$ and $\varphi(a^{-1})$?"
+  - **Closure:** $\varphi(ab)=\varphi(a)*\varphi(b)=e_H*e_H=e_H\Rightarrow ab\in\ker\varphi$. ✓ Perfect.
+  - **Inverses — a genuine reasoning gap caught and corrected.** Learner's chain reached $\varphi(a^{-1})=\varphi(e_G)$ correctly, but then justified "$\varphi(e_G)=e_H$" by claiming "$\varphi$ maps every element of $G$ to $e_H$ by definition." **This is wrong** — that would only hold for the trivial homomorphism; $\varphi$ maps only the *kernel* subset to $e_H$. The missing piece is the lemma: **every homomorphism satisfies $\varphi(e_G)=e_H$** (known from Session 11's A7 fast-reject test, but used as a result, never proved).
+  - **Learner then proved the lemma** (after tutor's hint to use $e_G\cdot e_G=e_G$ + homomorphism def + cancellation in $H$): from $\varphi(e_G\cdot e_G)=\varphi(e_G)\cdot\varphi(e_G)=\varphi(e_G)$, cancel one $\varphi(e_G)$ to get $\varphi(e_G)=e_H$. ✓
+  - **Inverses finished cleanly:** $e_H=\varphi(e_G)=\varphi(a\cdot a^{-1})=\varphi(a)*\varphi(a^{-1})=e_H*\varphi(a^{-1})$, cancel $e_H$ ⇒ $\varphi(a^{-1})=e_H$ ⇒ $a^{-1}\in\ker\varphi$. ✓
+- **Meta-lesson named:** the subtle but important distinction between *definition* (homo = $\varphi(ab)=\varphi(a)\varphi(b)$) and *theorem* ($\varphi(e_G)=e_H$ is a consequence, derived by cancellation). The learner's slip was treating the theorem as part of the definition. This is exactly the kind of foundational precision the learner profile targets.
+- **Next:** image ($\operatorname{im}\varphi=\varphi(G)$), then first isomorphism theorem (intuition: $G/\ker\varphi\cong\operatorname{im}\varphi$).
